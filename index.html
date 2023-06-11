@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="section-center">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./img/logo.png" alt="logo" />
+        </div>
+        <form class="search">
+          <input type="text" placeholder="search over 1000 recipes" />
+          <button type="submit" class="search-btn">search</button>
+        </form>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <button>
+              <i class="fa-regular fa-pen-to-square"></i>
+              <h3>add recipe</h3>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button>
+              <i class="fa-regular fa-bookmark"></i>
+              <h3>bookmarks</h3>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="recipes-section">
+        <section class="recipes-list"></section>
+        <section class="recipes-window"></section>
+      </div>
+    </div>
+  </body>
+</html>

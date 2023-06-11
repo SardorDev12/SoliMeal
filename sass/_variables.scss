@@ -1,0 +1,8 @@
+$font-size: 2rem;
+$padding: 0 2rem;
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
