@@ -14,10 +14,14 @@
     font-size: 1rem;
     padding: 0 2rem;
   }
+  input::placeholder {
+    opacity: 0.5;
+  }
 
   button {
     border: none;
-    background-color: rgb(255, 136, 0);
+    background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+    cursor: pointer;
     color: #fff;
     letter-spacing: 1px;
     padding: 1rem 2rem;

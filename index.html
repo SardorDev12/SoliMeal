@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,10 +19,12 @@
     <div class="section-center">
       <nav class="navbar">
         <div class="logo">
-          <img src="./img/logo.png" alt="logo" />
+          <a href="">
+            <img src="./img/logo.png" alt="logo" />
+          </a>
         </div>
         <form class="search">
-          <input type="text" placeholder="search over 1000 recipes" />
+          <input type="text" placeholder="Search over 1000 recipes" />
           <button type="submit" class="search-btn">search</button>
         </form>
         <ul class="nav-list">
@@ -40,7 +43,19 @@
         </ul>
       </nav>
       <div class="recipes-section">
-        <section class="recipes-list"></section>
+        <section class="recipes-result">
+          <ul class="recipes-list">
+            <li class="recipes-item">
+              <div class="item-img">
+                <img src="./img/favicon.png" alt="item-img" />
+              </div>
+              <div class="item-description">
+                <h3 class="item-title">Pizza</h3>
+                <p class="item-category">Home</p>
+              </div>
+            </li>
+          </ul>
+        </section>
         <section class="recipes-window"></section>
       </div>
     </div>

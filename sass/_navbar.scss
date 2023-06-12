@@ -18,6 +18,7 @@
       align-items: center;
       padding: 0 10px;
       transition: all 0.3s;
+      cursor: pointer;
 
       button {
         @include flex;
@@ -25,6 +26,7 @@
         border: none;
         background-color: transparent;
         text-transform: uppercase;
+        cursor: pointer;
 
         i {
           font-size: 2rem;
