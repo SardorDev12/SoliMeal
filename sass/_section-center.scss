@@ -8,6 +8,15 @@
   border-radius: 15px;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    width: 95%;
+    height: 95vh;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-top: 1rem;
+  }
+
   .recipes-section {
     display: flex;
     justify-content: space-between;
