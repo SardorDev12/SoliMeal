@@ -1,0 +1,20 @@
+.recipes-list {
+  @include flex-column;
+  padding: 0;
+
+  .recipes-item {
+    @include flex;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    transition: all 0.2s;
+    color: #574945;
+
+    .item-img {
+      width: 3rem;
+    }
+  }
+  .recipes-item:hover {
+    background-color: aliceblue;
+  }
+}

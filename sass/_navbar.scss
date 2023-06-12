@@ -27,6 +27,7 @@
         background-color: transparent;
         text-transform: uppercase;
         cursor: pointer;
+        color: #574945;
 
         i {
           font-size: 2rem;
@@ -37,5 +38,8 @@
     .nav-item:hover {
       background-color: #ffce8e;
     }
+  }
+  .toggle-menu {
+    font-size: 2rem;
   }
 }
