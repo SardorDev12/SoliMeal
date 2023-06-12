@@ -17,10 +17,6 @@
     @media screen and (max-width: 768px) {
       padding: 0 1rem;
     }
-
-    @media screen and (max-width: 425px) {
-      padding: 10rem 2rem;
-    }
   }
   input::placeholder {
     opacity: 0.5;
@@ -39,6 +35,9 @@
 
     @media screen and (max-width: 768px) {
       padding: 1rem;
+    }
+    @media screen and (max-width: 425px) {
+      padding: 3rem 1rem;
     }
   }
 }

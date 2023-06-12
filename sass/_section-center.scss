@@ -25,12 +25,20 @@
       min-width: 30%;
       min-height: 80vh;
       background-color: #fbdb89;
+
+      @media screen and (max-width: 425px) {
+        min-width: 40%;
+      }
     }
 
     .recipes-window {
       min-width: 70%;
       min-height: 80vh;
       background-color: #f9c987;
+
+      @media screen and (max-width: 425px) {
+        min-width: 60%;
+      }
     }
   }
 }
