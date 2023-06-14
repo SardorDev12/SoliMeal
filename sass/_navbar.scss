@@ -29,6 +29,29 @@
     height: 100%;
     list-style: none;
 
+    .bookmarks {
+      position: relative;
+      .bookmarks-content {
+        position: absolute;
+        text-align: center;
+        padding-top: 2.5rem;
+        color: #574945;
+        font-size: 1.5rem;
+        top: 6rem;
+        right: 0rem;
+        background-color: #fbdb89;
+        width: 15rem;
+        height: 7rem;
+        display: none;
+      }
+
+      &:hover {
+        .bookmarks-content {
+          display: block;
+        }
+      }
+    }
+
     @media screen and (max-width: 768px) {
       padding-left: 0;
     }
@@ -73,6 +96,7 @@
       background-color: #ffce8e;
     }
   }
+
   .toggle-menu {
     font-size: 2rem;
     display: none;
