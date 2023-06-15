@@ -1,7 +1,135 @@
 .recipes-window {
+  color: #574945;
+
+  .recipe-window-title {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
   h2 {
     text-align: center;
     margin: 2rem 0;
     color: #574945;
+  }
+
+  .recipe-img {
+    height: 40%;
+    position: relative;
+
+    .recipe-meal-title {
+      h2 {
+        color: #574945;
+        background-color: #fbdb89;
+        padding: 1rem 5rem;
+        border: 2px solid rgb(233, 117, 63);
+        border-radius: 5rem 20rem 5rem;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0.5rem;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+
+  .recipe-navbar,
+  .prep-info {
+    @include flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    i {
+      font-size: 1.5rem;
+      color: orangered;
+    }
+
+    .bookmarks-btn {
+      background-color: orangered;
+      border-radius: 50%;
+      padding: 0.6rem 0.7rem;
+      transition: all 0.1s;
+      &:hover {
+        background-color: #af2f00;
+        transform: scale(1.1);
+      }
+      button {
+        background-color: transparent;
+        i {
+          color: #faebd7;
+        }
+      }
+    }
+
+    .prep-info-time,
+    .prep-info-servings {
+      @include flex;
+      gap: 0.5rem;
+
+      .servings-btns {
+        button {
+          background-color: transparent;
+          border: 2px solid orangered;
+          color: orangered;
+
+          &:hover {
+            border: 2px solid #c73500;
+            i {
+              color: #af2f00;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: 50%;
+      outline: none;
+      padding: 0.1rem 0.2rem;
+    }
+  }
+
+  .ingredients-section {
+    background-color: #eec185;
+    padding: 1rem;
+
+    .ingredients-title {
+      margin: 1rem 0;
+    }
+
+    .ingredients {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .how-to-cook {
+    text-align: center;
+    padding: 0 3rem;
+
+    button {
+      padding: 0.8rem 2.5rem;
+      margin: 1rem 0;
+      border: none;
+      outline: none;
+      background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+      border-radius: 10px;
+      border: 1px solid orangered;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #574945;
+
+      &:hover {
+        background-image: linear-gradient(to right bottom, #f48982, #fbdb89);
+      }
+    }
   }
 }
