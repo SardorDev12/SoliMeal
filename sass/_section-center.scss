@@ -21,12 +21,15 @@
     justify-content: space-between;
 
     @media screen and (max-width: 425px) {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
     }
     .recipes-result {
       width: 40%;
       background-color: #fbdb89;
+
+      @media screen and (max-width: 425px) {
+        width: 100%;
+      }
     }
 
     .recipes-window {

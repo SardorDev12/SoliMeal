@@ -16,6 +16,10 @@
     opacity: 0.3;
     transition: all 0.2s ease-in-out;
   }
+
+  @media screen and (max-width: 425px) {
+    z-index: 1;
+  }
 }
 
 .add-recipe-form {
@@ -27,6 +31,10 @@
     opacity: 1;
     transition: all 0.1s ease-in-out;
   }
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
 }
 
 .add-form {
@@ -35,7 +43,6 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  height: 80vh;
   margin: 0 auto;
   padding: 2rem;
   background-color: beige;
@@ -43,8 +50,22 @@
   @include flex-column;
   z-index: 2;
 
+  @media screen and (max-width: 768px) {
+    width: 98%;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 98%;
+    top: 30rem;
+    z-index: 2;
+  }
   .input-area {
     @include flex;
+
+    @media screen and (max-width: 425px) {
+      @include flex-column;
+    }
   }
 
   .data {
