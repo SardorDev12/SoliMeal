@@ -43,6 +43,17 @@
         width: 15rem;
         height: 7rem;
         display: none;
+        z-index: 1;
+        border-radius: 5px;
+
+        @media screen and (max-width: 425px) {
+          top: 3.4rem;
+          right: -5rem;
+          width: 10rem;
+          height: 5rem;
+          font-size: 1rem;
+          padding-top: 2rem;
+        }
       }
 
       .bookmarks-content.show {
@@ -78,11 +89,20 @@
         cursor: pointer;
         color: #574945;
 
+        @media screen and (max-width: 768px) {
+          font-size: 0.6rem;
+          gap: 3px;
+        }
+
         @media screen and (max-width: 425px) {
-          font-size: 0.7rem;
+          font-size: 0.8rem;
         }
         i {
           font-size: 2rem;
+
+          @media screen and (max-width: 768px) {
+            font-size: 1.5rem;
+          }
           @media screen and (max-width: 425px) {
             font-size: 1rem;
           }

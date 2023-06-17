@@ -43,10 +43,10 @@ let servingsNumber = parseInt(
 
 servingsBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    if (e.target.classList.contains("inc") && servingsNumber >= 0) {
+    if (e.target.classList.contains("inc") && servingsNumber >= 1) {
       servingsNumber++;
       servingsNumberEl.innerText = servingsNumber;
-    } else if (e.target.classList.contains("dec") && servingsNumber > 0) {
+    } else if (e.target.classList.contains("dec") && servingsNumber > 1) {
       servingsNumber--;
       servingsNumberEl.innerText = servingsNumber;
     }

@@ -1,5 +1,6 @@
 .recipes-window {
   color: #574945;
+  padding-bottom: 3rem;
 
   .recipe-window-title {
     display: none;
@@ -15,7 +16,7 @@
   }
 
   .recipe-img {
-    height: 40%;
+    height: 30%;
     position: relative;
 
     .recipe-meal-title {
@@ -30,6 +31,11 @@
         bottom: 0.5rem;
         left: 50%;
         transform: translate(-50%, 50%);
+
+        @media screen and (max-width: 768px) {
+          font-size: 1.5rem;
+          padding: 0.5rem 3rem;
+        }
       }
     }
   }
@@ -43,9 +49,17 @@
     font-size: 1rem;
     text-transform: uppercase;
 
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+
     i {
       font-size: 1.5rem;
       color: orangered;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
 
     .bookmarks-btn {
@@ -70,11 +84,16 @@
       @include flex;
       gap: 0.5rem;
 
+      @media screen and (max-width: 768px) {
+        gap: 0.3rem;
+      }
+
       .servings-btns {
         button {
           background-color: transparent;
           border: 2px solid orangered;
           color: orangered;
+          cursor: pointer;
 
           &:hover {
             border: 2px solid #c73500;
@@ -97,6 +116,10 @@
   .ingredients-section {
     background-color: #eec185;
     padding: 1rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 0.3rem;
+    }
 
     .ingredients-title {
       margin: 1rem 0;
