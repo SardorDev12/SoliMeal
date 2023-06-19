@@ -16,8 +16,10 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- ********** BACKGORUND SHADE WHEN MODAL APPEARS ************-->
     <div class="bg-effect"></div>
 
+    <!-- ********** MAIN DIV ************** -->
     <div class="section-center">
       <nav class="navbar">
         <div class="logo">
@@ -26,7 +28,11 @@
           </a>
         </div>
         <form class="search">
-          <input type="text" placeholder="Search over 1000 recipes" />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search over 1000 recipes"
+          />
           <button type="submit" class="search-btn">search</button>
         </form>
 
@@ -46,6 +52,8 @@
           </li>
         </ul>
       </nav>
+
+      <!-- ********** ADD NEW RECIPE FORM ************** -->
       <div class="add-recipe-form">
         <form class="add-form">
           <div class="close-btn">
@@ -125,10 +133,13 @@
           </div>
         </form>
       </div>
+
+      <!-- ********** SEARCH RESULTS AND RENDER RESULTS -->
       <div class="recipes-section">
+        <!-- *********** RESULTS LIST **********-->
         <section class="recipes-result">
           <ul class="recipes-list">
-            <li class="recipes-item">
+            <!-- <li class="recipes-item">
               <div class="item-img">
                 <img src="./img/favicon.png" alt="item-img" />
               </div>
@@ -154,90 +165,94 @@
                 <h3 class="item-title">Pizza</h3>
                 <p class="item-category">Home</p>
               </div>
-            </li>
+            </li> -->
           </ul>
         </section>
+
+        <!-- ********** RENDER RESULTS ********* -->
         <section class="recipes-window">
           <h2 class="recipe-window-title">Cook your dream meal!</h2>
-          <div class="recipe-img">
-            <img src="./img/meal-test.jpg" alt="meal" />
-            <div class="recipe-meal-title">
-              <h2>Meal</h2>
-            </div>
-          </div>
-          <div class="recipe-navbar">
-            <div class="prep-info">
-              <div class="prep-info-time">
-                <i class="fa-regular fa-clock"></i>
-                <h4><span class="recipe-time-value">75</span> minutes</h4>
+          <div class="recipe-info">
+            <div class="recipe-img">
+              <img src="./img/meal-test.jpg" alt="meal" />
+              <div class="recipe-meal-title">
+                <h2>Meal</h2>
               </div>
-              <div class="prep-info-servings">
-                <i class="fa-solid fa-users"></i>
-                <h4><span class="servings-number">4</span> servings</h4>
-                <div class="servings-btns">
-                  <button type="button">
-                    <i class="fa-solid fa-minus dec"></i>
-                  </button>
-                  <button type="button">
-                    <i class="fa-solid fa-plus inc"></i>
-                  </button>
+            </div>
+            <div class="recipe-navbar">
+              <div class="prep-info">
+                <div class="prep-info-time">
+                  <i class="fa-regular fa-clock"></i>
+                  <h4><span class="recipe-time-value">75</span> minutes</h4>
+                </div>
+                <div class="prep-info-servings">
+                  <i class="fa-solid fa-users"></i>
+                  <h4><span class="servings-number">4</span> servings</h4>
+                  <div class="servings-btns">
+                    <button type="button">
+                      <i class="fa-solid fa-minus dec"></i>
+                    </button>
+                    <button type="button">
+                      <i class="fa-solid fa-plus inc"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
+              <div class="bookmarks-btn">
+                <button>
+                  <i class="fa-regular fa-bookmark"></i>
+                </button>
+              </div>
             </div>
-            <div class="bookmarks-btn">
-              <button>
-                <i class="fa-regular fa-bookmark"></i>
-              </button>
+            <article class="ingredients-section">
+              <h2 class="ingredients-title">Ingredients</h2>
+              <ul class="ingredients">
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  2 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  3 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  4 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+                <li class="ingredient">
+                  1 medium head cauliflower cut into florets
+                </li>
+              </ul>
+            </article>
+            <div class="how-to-cook">
+              <h2>How to Cook</h2>
+              <p>
+                This recipe was carefully designed and tested by
+                <span class="recipe-source">Closet Cooking</span>. Please check
+                out directions at their website.
+              </p>
+              <a href="">
+                <button type="button">directions</button>
+              </a>
             </div>
-          </div>
-          <article class="ingredients-section">
-            <h2 class="ingredients-title">Ingredients</h2>
-            <ul class="ingredients">
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                2 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                3 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                4 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-              <li class="ingredient">
-                1 medium head cauliflower cut into florets
-              </li>
-            </ul>
-          </article>
-          <div class="how-to-cook">
-            <h2>How to Cook</h2>
-            <p>
-              This recipe was carefully designed and tested by
-              <span class="recipe-source">Closet Cooking</span>. Please check
-              out directions at their website.
-            </p>
-            <a href="">
-              <button type="button">directions</button>
-            </a>
           </div>
         </section>
       </div>

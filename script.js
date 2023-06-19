@@ -1,19 +1,20 @@
-// const showRecipe = async () => {
-//   try {
-//     const res = await fetch(
-//       "https://forkify-api.herokuapp.com/api/get?rId=47746"
-//     );
+// ******************* Fetch data
+const showRecipe = async () => {
+  try {
+    const res = await fetch(
+      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604691c37cdc054bd034"
+    );
 
-//     const data = await res.json();
-//     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
-//     const { recipe } = data;
-//     console.log(recipe);
-//   } catch (error) {
-//     alert(error);
-//   }
-// };
-// showRecipe();
+    let { recipe } = data.data;
+    console.log(recipe.title);
+  } catch (error) {
+    alert(error);
+  }
+};
+showRecipe();
 
 // ********** Bookmarks toggle ***********
 document.querySelector(".bookmarks").addEventListener("click", () => {
@@ -50,5 +51,23 @@ servingsBtns.forEach((btn) => {
       servingsNumber--;
       servingsNumberEl.innerText = servingsNumber;
     }
+  });
+});
+
+// ************ Show input results **************
+
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("search-input")) {
+    document.querySelector(".recipes-result").classList.add("show-results");
+  } else {
+    document.querySelector(".recipes-result").classList.remove("show-results");
+  }
+});
+
+// ********* Hide input results
+const results = document.querySelectorAll(".recipes-list li");
+results.forEach((result) => {
+  result.addEventListener("click", () => {
+    console.log("result");
   });
 });
