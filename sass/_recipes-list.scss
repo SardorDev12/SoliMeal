@@ -2,6 +2,10 @@
   @include flex-column;
   padding: 0;
 
+  a {
+    text-decoration: none;
+  }
+
   .recipes-item {
     @include flex;
     justify-content: flex-start;

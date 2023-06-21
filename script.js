@@ -66,10 +66,11 @@ const loadingMessage = (parentEl) => {
 
 const showRecipe = async () => {
   try {
+    const hashID = window.location.hash.slice(1);
     loadingMessage(recipesWindow);
     const res = await fetch(
       // "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604691c37cdc054bd034"
-      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcd86"
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${hashID}`
     );
 
     const data = await res.json();
@@ -164,4 +165,6 @@ const showRecipe = async () => {
     alert(error);
   }
 };
-showRecipe();
+
+// *********** Hashchange event *******************
+window.addEventListener("hashchange", showRecipe);
