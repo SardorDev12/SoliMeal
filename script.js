@@ -1,3 +1,8 @@
+// ********** Logo click -> page reload ***********
+document.querySelector(".logo").addEventListener("click", () => {
+  location.reload();
+});
+
 // ********** Bookmarks toggle ***********
 document.querySelector(".bookmarks").addEventListener("click", () => {
   document.querySelector(".bookmarks-content").classList.toggle("show");
@@ -67,9 +72,9 @@ const loadingMessage = (parentEl) => {
 const showRecipe = async () => {
   try {
     const hashID = window.location.hash.slice(1);
+    if (!hashID) return;
     loadingMessage(recipesWindow);
     const res = await fetch(
-      // "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604691c37cdc054bd034"
       `https://forkify-api.herokuapp.com/api/v2/recipes/${hashID}`
     );
 
@@ -166,5 +171,8 @@ const showRecipe = async () => {
   }
 };
 
-// *********** Hashchange event *******************
-window.addEventListener("hashchange", showRecipe);
+// *********** Hashchange and Load events *******************
+const events = ["hashchange", "load"];
+events.forEach((event) => {
+  window.addEventListener(event, showRecipe);
+});
