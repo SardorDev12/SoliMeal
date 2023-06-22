@@ -81,7 +81,9 @@ class Recipeview {
     return `<li class="ingredient">
            
             <div class="ingredient-description">
-             <span class="ingredient-quantity">${ingredient.quantity}</span>
+             <span class="ingredient-quantity">${
+               ingredient.quantity ? ingredient.quantity : ""
+             }</span>
               <span class="ingredient-unit">${ingredient.unit}</span>
             ${ingredient.description}
               </div>
