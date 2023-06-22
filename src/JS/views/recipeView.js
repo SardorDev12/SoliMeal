@@ -1,4 +1,4 @@
-class Recipeview {
+class RecipeView {
   #parentElement = document.querySelector(".recipes-window");
   #data;
   #errorMessage = "No recipe found on this url! Please, try another one!";
@@ -129,4 +129,4 @@ class Recipeview {
           </li>`;
   }
 }
-export default new Recipeview();
+export default new RecipeView();

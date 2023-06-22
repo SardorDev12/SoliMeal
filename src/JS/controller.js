@@ -1,5 +1,6 @@
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
+import searchResultsView from "./views/searchResultsView.js";
 
 // ********** Logo click -> page reload ***********
 document.querySelector(".logo").addEventListener("click", () => {
@@ -49,15 +50,34 @@ servingsBtns.forEach((btn) => {
 window.addEventListener("click", (e) => {
   if (e.target.classList.contains("search-input")) {
     document.querySelector(".recipes-result").classList.add("show-results");
-  } else {
-    document.querySelector(".recipes-result").classList.remove("show-results");
   }
 });
 
 // ********* Hide input results ************
 const results = document.querySelectorAll(".recipes-list li");
 results.forEach((result) => {
-  result.addEventListener("click", () => {});
+  result.addEventListener("click", () => {
+    controlRecipes();
+  });
+});
+
+// Search
+const searchForm = document.querySelector(".search");
+
+// Load search results
+const controlSearchResults = async () => {
+  try {
+    await model.loadRecipeResults(input.value);
+    console.log(model.state.search.results);
+    searchResultsView.render(model.state.search.results);
+  } catch (arr) {
+    throw err;
+  }
+};
+const input = document.querySelector(".search-input");
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  controlSearchResults();
 });
 
 // *************** Fetch data ************
