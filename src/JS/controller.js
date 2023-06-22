@@ -72,17 +72,15 @@ const controlRecipes = async () => {
 
     // Loading data and storing it to Model.state
     await model.loadRecipe(id);
-
     // ********* Render data **********
     recipeView.render(model.state.recipe);
-  } catch (error) {
-    alert(error);
-    console.log(error);
+  } catch (err) {
+    recipeView.renderError();
   }
 };
 
 // *********** Hashchange and Load events *******************
-const events = ["hashchange", "load"];
-events.forEach((event) => {
-  window.addEventListener(event, controlRecipes);
-});
+const init = () => {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();

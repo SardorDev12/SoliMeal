@@ -13,6 +13,32 @@
     color: #574945;
   }
 
+  .error {
+    @include flex-column;
+    text-align: center;
+    gap: 1rem;
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+
+    .error-icon {
+      color: darkred;
+      font-size: 2rem;
+    }
+  }
+
+  .success {
+    @include flex-column;
+    text-align: center;
+    gap: 1rem;
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+
+    .success-icon {
+      color: darkgreen;
+      font-size: 2rem;
+    }
+  }
+
   .recipe-window-title {
     // display: none;
 
