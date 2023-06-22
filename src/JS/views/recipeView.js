@@ -56,7 +56,7 @@ class Recipeview {
               <ul class="ingredients">
               ${this.#data.ingredients
                 .map((ingredient) => {
-                  this.generateMarkupIngredients(ingredient);
+                  return this.generateMarkupIngredients(ingredient);
                 })
                 .join("")}
                  
