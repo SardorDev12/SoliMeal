@@ -78,7 +78,17 @@ window.addEventListener("click", (e) => {
 
 // ************ Show input results **************
 window.addEventListener("click", (e) => {
-  if (e.target.classList.contains("search-input")) {
+  if (
+    e.target.classList.contains("search-input") ||
+    e.target.classList.contains("search-btn")
+  ) {
     document.querySelector(".recipes-result").classList.add("show-results");
+  } else if (
+    document
+      .querySelector(".recipes-result")
+      .classList.contains("show-results") &&
+    !e.target.classList.contains("search-input")
+  ) {
+    document.querySelector(".recipes-result").classList.remove("show-results");
   }
 });
