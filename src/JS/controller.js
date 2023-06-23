@@ -1,6 +1,55 @@
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
+import searchView from "./views/searchView.js";
 import searchResultsView from "./views/searchResultsView.js";
+
+// Load search results
+const controlSearchResults = async () => {
+  try {
+    // Loading
+    searchResultsView.loadingMessage();
+
+    // Search query from input value
+    const query = searchView.getQuery();
+    if (!query) return;
+
+    // Loading recipes with the given query
+    await model.loadRecipeResults(query);
+
+    // Rendering the recipes in results section
+    searchResultsView.render(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+    searchResultsView.renderError();
+  }
+};
+
+// Load recipes
+const controlRecipes = async () => {
+  try {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    // Loading
+    recipeView.loadingMessage();
+
+    // Loading data and storing it to Model.state
+    await model.loadRecipe(id);
+
+    // Render data
+    recipeView.render(model.state.recipe);
+  } catch (err) {
+    console.log(err);
+    recipeView.renderError();
+  }
+};
+
+// Init function to call controllers
+const init = () => {
+  recipeView.addHandlerRender(controlRecipes);
+  searchView.addHandlerSearch(controlSearchResults);
+};
+init();
 
 // ********** Logo click -> page reload ***********
 document.querySelector(".logo").addEventListener("click", () => {
@@ -26,81 +75,10 @@ window.addEventListener("click", (e) => {
 });
 
 // ***************** Servings counter ******************
-const servingsBtns = document.querySelectorAll(".servings-btns button");
-let servingsNumberEl = document.querySelector(".servings-number");
-
-let servingsNumber = document.querySelector(".servings-number");
-
-servingsNumber = parseInt(servingsNumber?.innerHTML);
-
-servingsBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (e.target.classList.contains("inc") && servingsNumber >= 1) {
-      servingsNumber++;
-      servingsNumberEl.innerText = servingsNumber;
-    } else if (e.target.classList.contains("dec") && servingsNumber > 1) {
-      servingsNumber--;
-      servingsNumberEl.innerText = servingsNumber;
-    }
-  });
-});
 
 // ************ Show input results **************
-
 window.addEventListener("click", (e) => {
   if (e.target.classList.contains("search-input")) {
     document.querySelector(".recipes-result").classList.add("show-results");
   }
 });
-
-// ********* Hide input results ************
-const results = document.querySelectorAll(".recipes-list li");
-results.forEach((result) => {
-  result.addEventListener("click", () => {
-    controlRecipes();
-  });
-});
-
-// Search
-const searchForm = document.querySelector(".search");
-
-// Load search results
-const controlSearchResults = async () => {
-  try {
-    await model.loadRecipeResults(input.value);
-    console.log(model.state.search.results);
-    searchResultsView.render(model.state.search.results);
-  } catch (arr) {
-    throw err;
-  }
-};
-const input = document.querySelector(".search-input");
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  controlSearchResults();
-});
-
-// *************** Fetch data ************
-
-const controlRecipes = async () => {
-  try {
-    const id = window.location.hash.slice(1);
-    if (!id) return;
-
-    // ****** Loading *****
-    recipeView.loadingMessage();
-
-    // Loading data and storing it to Model.state
-    await model.loadRecipe(id);
-    // ********* Render data **********
-    recipeView.render(model.state.recipe);
-  } catch (err) {
-    recipeView.renderError();
-  }
-};
-
-// *********** Hashchange and Load events *******************
-const init = () => {
-  recipeView.addHandlerRender(controlRecipes);
-};
-init();

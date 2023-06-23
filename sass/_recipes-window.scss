@@ -52,7 +52,7 @@
     height: 100%;
 
     .recipe-img {
-      height: 30%;
+      height: 20rem;
       position: relative;
 
       .recipe-meal-title {
@@ -74,13 +74,9 @@
           }
 
           @media screen and (max-width: 425px) {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             padding: 0.5rem 1rem;
-            position: relative;
-            bottom: 0;
-            margin: 0;
-            margin-bottom: 1rem;
-            width: 50%;
+            bottom: 1rem;
           }
         }
       }
