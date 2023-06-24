@@ -47,5 +47,3 @@ export const loadRecipeResults = async (query) => {
     recipeView.renderError();
   }
 };
-
-loadRecipeResults("pizza");

@@ -1,0 +1,13 @@
+.pagination {
+  @include flex;
+  margin: 1rem;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: bisque;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #cc756f;
+  }
+}
