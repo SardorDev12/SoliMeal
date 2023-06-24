@@ -52,7 +52,7 @@
     height: 100%;
 
     .recipe-img {
-      height: 20rem;
+      height: 15rem;
       position: relative;
 
       .recipe-meal-title {
@@ -64,9 +64,10 @@
           border-radius: 5rem 20rem 5rem;
           overflow: hidden;
           position: absolute;
-          bottom: 3rem;
+          bottom: 1rem;
           left: 50%;
           transform: translate(-50%, 50%);
+          font-size: 1.2rem;
 
           @media screen and (max-width: 768px) {
             font-size: 1.5rem;
@@ -185,6 +186,7 @@
       button {
         padding: 0.8rem 2.5rem;
         margin: 1rem 0;
+        margin-bottom: 3rem;
         border: none;
         outline: none;
         background-image: linear-gradient(to right bottom, #fbdb89, #f48982);

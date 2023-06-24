@@ -5,6 +5,7 @@ class SearchView extends View {
 
   getQuery() {
     const query = this._parentElement.querySelector(".search-input").value;
+
     this._clearInput();
     return query;
   }

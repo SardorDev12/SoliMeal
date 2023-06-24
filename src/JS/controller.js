@@ -10,11 +10,13 @@ const controlSearchResults = async () => {
     searchResultsView.loadingMessage();
 
     // Search query from input value
-    const query = searchView.getQuery();
-    if (!query) return;
+
+    model.state.search.query = searchView.getQuery();
+
+    if (!model.state.search.query) return;
 
     // Loading recipes with the given query
-    await model.loadRecipeResults(query);
+    await model.loadRecipeResults(model.state.search.query);
 
     // Rendering the recipes in results section
     searchResultsView.render(model.state.search.results);

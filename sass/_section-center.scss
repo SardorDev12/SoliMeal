@@ -20,6 +20,10 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (min-width: 426px) {
+      max-height: 69.5vh;
+    }
+
     @media screen and (max-width: 425px) {
       @include flex-column;
     }
@@ -27,6 +31,11 @@
       width: 40%;
       height: auto;
       background-color: #fbdb89;
+
+      @media screen and (min-width: 426px) {
+        max-height: 100%;
+        overflow: auto;
+      }
 
       @media screen and (max-width: 425px) {
         width: 100%;
@@ -43,6 +52,11 @@
     .recipes-window {
       width: 100%;
       background-color: #f9c987;
+
+      @media screen and (min-width: 426px) {
+        max-height: 100%;
+        overflow: auto;
+      }
 
       @media screen and (max-width: 425px) {
         min-width: 60%;
