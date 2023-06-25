@@ -98,7 +98,8 @@ window.addEventListener("click", (e) => {
     document
       .querySelector(".recipes-result")
       .classList.contains("show-results") &&
-    !e.target.classList.contains("search-input")
+    !e.target.classList.contains("search-input") &&
+    !e.target.classList.contains("pagination-btn")
   ) {
     document.querySelector(".recipes-result").classList.remove("show-results");
   }
