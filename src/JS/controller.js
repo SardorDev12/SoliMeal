@@ -7,17 +7,16 @@ import paginationView from "./views/paginationView.js";
 // Load search results
 const controlSearchResults = async () => {
   try {
+    // Search query from input value
+    model.state.search.query = searchView.getQuery();
+    const query = model.state.search.query;
+
+    if (!query) return;
+
     // Loading
     searchResultsView.loadingMessage();
-
-    // Search query from input value
-
-    model.state.search.query = searchView.getQuery();
-
-    if (!model.state.search.query) return;
-
     // Loading recipes with the given query
-    await model.loadRecipeResults(model.state.search.query);
+    await model.loadRecipeResults(query);
 
     // Rendering the recipes in results section
     searchResultsView.render(model.getResultsPage());
