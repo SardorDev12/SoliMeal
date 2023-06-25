@@ -21,14 +21,14 @@
     justify-content: space-between;
 
     @media screen and (min-width: 426px) {
-      max-height: 69.5vh;
+      // max-height: 69.5vh;
     }
 
     @media screen and (max-width: 425px) {
       @include flex-column;
     }
     .recipes-result {
-      width: 40%;
+      width: 50%;
       height: auto;
       background-color: #fbdb89;
 

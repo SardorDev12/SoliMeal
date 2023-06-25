@@ -1,4 +1,4 @@
-import { API_URL } from "./config.js";
+import { API_URL, RES_PER_PAGE } from "./config.js";
 import { getJSON } from "./helpers.js";
 import recipeView from "./views/recipeView.js";
 
@@ -7,6 +7,8 @@ export const state = {
   search: {
     query: "",
     results: {},
+    resPerPage: RES_PER_PAGE,
+    page: 1,
   },
 };
 
@@ -46,4 +48,12 @@ export const loadRecipeResults = async (query) => {
   } catch (arr) {
     recipeView.renderError();
   }
+};
+
+export const getResultsPage = (pageNumber = state.search.page) => {
+  state.search.page = pageNumber;
+  const start = (pageNumber - 1) * state.search.resPerPage;
+  const end = pageNumber * state.search.resPerPage;
+
+  return state.search.results.slice(start, end);
 };

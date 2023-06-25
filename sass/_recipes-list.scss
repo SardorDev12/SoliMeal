@@ -71,3 +71,27 @@
     background-color: #fce2a2;
   }
 }
+.pagination {
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: bisque;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #cc756f;
+    margin: 1rem;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  button.prev-btn {
+    float: left;
+  }
+
+  button.next-btn {
+    float: right;
+  }
+}
