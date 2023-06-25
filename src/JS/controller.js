@@ -54,9 +54,15 @@ const controlRecipes = async () => {
   }
 };
 
+const controlServings = (newServings) => {
+  model.updateServings(newServings);
+  recipeView.render(model.state.recipe);
+};
+
 // Init function to call controllers
 const init = () => {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerClick(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
@@ -85,9 +91,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// ***************** Servings counter ******************
-
-// ************ Show input results **************
+// ************ Show input results on mobile **************
 window.addEventListener("click", (e) => {
   if (
     e.target.classList.contains("search-input") ||

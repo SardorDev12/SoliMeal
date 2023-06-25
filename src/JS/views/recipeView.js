@@ -28,10 +28,14 @@ class RecipeView extends View {
                     this._data.servings
                   }</span> servings</h4>
                   <div class="servings-btns">
-                    <button type="button">
+                    <button class="servings-btn" data-updateTo="${
+                      this._data.servings - 1
+                    }" type="button">
                       <i class="fa-solid fa-minus dec"></i>
                     </button>
-                    <button type="button">
+                    <button class="servings-btn" data-updateTo="${
+                      this._data.servings + 1
+                    }" type="button">
                       <i class="fa-solid fa-plus inc"></i>
                     </button>
                   </div>
@@ -70,6 +74,13 @@ class RecipeView extends View {
     const events = ["hashchange", "load"];
     events.forEach((event) => {
       window.addEventListener(event, handler);
+    });
+  }
+
+  addHandlerClick(handler) {
+    this._parentElement.addEventListener("click", (e) => {
+      const newServings = +e.target.closest(".servings-btn").dataset.updateto;
+      if (newServings > 0) handler(newServings);
     });
   }
 
