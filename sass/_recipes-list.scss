@@ -41,6 +41,10 @@
   .recipes-item {
     text-decoration: none;
 
+    &.active {
+      background-color: #fce2a2;
+    }
+
     li {
       @include flex;
       justify-content: flex-start;
