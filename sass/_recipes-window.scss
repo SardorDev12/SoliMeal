@@ -138,10 +138,24 @@
             color: orangered;
             cursor: pointer;
 
+            @media screen and (max-width: 425px) {
+              padding: 0.7rem;
+            }
+
+            i {
+              @media screen and (max-width: 425px) {
+                font-size: 1.5rem;
+              }
+            }
+
             &:hover {
               border: 2px solid #c73500;
               i {
                 color: #af2f00;
+                @media screen and (max-width: 425px) {
+                  font-size: 1.5rem;
+                  color: white;
+                }
               }
             }
           }
