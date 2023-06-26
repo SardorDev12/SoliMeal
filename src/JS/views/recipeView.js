@@ -79,7 +79,10 @@ class RecipeView extends View {
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener("click", (e) => {
-      const newServings = +e.target.closest(".servings-btn").dataset.updateto;
+      const btn = e.target.closest(".servings-btn");
+      if (!btn) return;
+
+      const newServings = +btn.dataset.updateto;
       if (newServings > 0) handler(newServings);
     });
   }

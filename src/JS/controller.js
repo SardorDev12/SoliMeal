@@ -55,7 +55,8 @@ const controlRecipes = async () => {
 
 const controlServings = (newServings) => {
   model.updateServings(newServings);
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 };
 
 // Init function to call controllers
@@ -66,6 +67,21 @@ const init = () => {
   paginationView.addHandlerClick(controlPagination);
 };
 init();
+
+window.addEventListener("click", (e) => {
+  const el = e.target.closest(".recipes-item");
+  const results = document.querySelectorAll(".recipes-item");
+  if (!el) return;
+  model.state.search.results.forEach((element, i) => {
+    if (element.id == model.state.recipe.id) {
+      results.forEach((res) => {
+        res?.classList.remove("active");
+      });
+
+      el.classList.add("active");
+    }
+  });
+});
 
 // ********** Logo click -> page reload ***********
 document.querySelector(".logo").addEventListener("click", () => {
