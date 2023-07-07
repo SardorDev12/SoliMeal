@@ -31,28 +31,67 @@
 
     .bookmarks {
       position: relative;
-      .bookmarks-content {
-        position: absolute;
-        text-align: center;
-        padding-top: 2.5rem;
-        color: #574945;
-        font-size: 1.5rem;
-        top: 6rem;
-        right: 0rem;
-        background-color: #fbdb89;
-        width: 15rem;
-        height: 7rem;
-        display: none;
-        z-index: 1;
-        border-radius: 5px;
 
-        @media screen and (max-width: 425px) {
-          top: 3.4rem;
-          right: -5rem;
-          width: 10rem;
-          height: 5rem;
-          font-size: 1rem;
-          padding-top: 2rem;
+      .bookmarks-content.show {
+        display: block;
+      }
+    }
+
+    .bookmarks-content {
+      position: absolute;
+      min-width: 20rem;
+      min-height: 3rem;
+      text-align: center;
+      top: 9rem;
+      right: 8.4rem;
+      z-index: 1;
+      color: #574945;
+      background-color: #fbdb89;
+      border-radius: 5px;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+
+      p.bookmark-message {
+        margin: 1rem 0;
+      }
+
+      .recipes-item {
+        text-decoration: none;
+
+        li {
+          @include flex;
+          justify-content: flex-start;
+          padding: 0.5rem;
+          gap: 1rem;
+          transition: all 0.2s;
+          color: #574945;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #fce2a2;
+            border-radius: 5px;
+          }
+
+          .item-img {
+            max-width: 3rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+          .item-description {
+            .item-title {
+              font-size: 1rem;
+            }
+            @media screen and (max-width: 425px) {
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .recipes-item:hover {
+          background-color: #fce2a2;
         }
       }
 

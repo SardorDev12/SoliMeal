@@ -10,6 +10,7 @@ export const state = {
     resPerPage: RES_PER_PAGE,
     page: 1,
   },
+  bookmarks: [],
 };
 
 export const loadRecipe = async function (id) {
@@ -45,6 +46,8 @@ export const loadRecipeResults = async (query) => {
         publisher: recipe.publisher,
       };
     });
+
+    state.search.page = 1;
   } catch (arr) {
     recipeView.renderError();
   }
@@ -67,4 +70,10 @@ export const getResultsPage = (pageNumber = state.search.page) => {
   const end = pageNumber * state.search.resPerPage;
 
   return state.search.results.slice(start, end);
+};
+
+export const addBookmark = (recipe) => {
+  state.bookmarks.push(recipe);
+
+  if (recipe.id == state.recipe.id) state.recipe.bookmarked = true;
 };

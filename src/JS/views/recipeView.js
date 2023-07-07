@@ -87,6 +87,14 @@ class RecipeView extends View {
     });
   }
 
+  addHandlerBookmark(handler) {
+    this._parentElement.addEventListener("click", (e) => {
+      const bookmarkBtn = e.target.closest(".bookmarks-btn");
+      if (!bookmarkBtn) return;
+      handler();
+    });
+  }
+
   _generateMarkupIngredients(ingredient) {
     return `<li class="ingredient">
            
