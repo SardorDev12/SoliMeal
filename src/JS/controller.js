@@ -62,17 +62,8 @@ const controlServings = (newServings) => {
 
 // control bookmarks
 const controlBookmarks = () => {
-  //if allready bookmarked
-  if (model.state.recipe.bookmarked) {
-    model.state.bookmarks = model.state.bookmarks.filter((bookmark) => {
-      return bookmark.id != model.state.recipe.id;
-    });
-    // if new bookmark
-  } else {
-    model.addBookmark(model.state.recipe);
-  }
-
-  bookmarksView.render(model.state.bookmarks);
+  model.addBookmark(model.state.recipe);
+  console.log(model.state.bookmarks);
 };
 
 // Init function to call controllers

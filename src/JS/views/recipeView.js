@@ -43,7 +43,7 @@ class RecipeView extends View {
               </div>
               <div class="bookmarks-btn">
                 <button>
-                  <i class="fa-regular fa-bookmark"></i>
+                    <i class="fa-regular fa-bookmark"></i>
                 </button>
               </div>
             </div>
@@ -91,6 +91,9 @@ class RecipeView extends View {
     this._parentElement.addEventListener("click", (e) => {
       const bookmarkBtn = e.target.closest(".bookmarks-btn");
       if (!bookmarkBtn) return;
+      if (this._data.bookmarked) {
+        bookmarkBtn.classList.add("marked");
+      }
       handler();
     });
   }

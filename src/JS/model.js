@@ -75,5 +75,7 @@ export const getResultsPage = (pageNumber = state.search.page) => {
 export const addBookmark = (recipe) => {
   state.bookmarks.push(recipe);
 
-  if (recipe.id == state.recipe.id) state.recipe.bookmarked = true;
+  if (recipe.id == state.recipe.id) {
+    state.recipe.bookmarked = true;
+  }
 };
