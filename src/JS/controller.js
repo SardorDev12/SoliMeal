@@ -56,14 +56,18 @@ const controlRecipes = async () => {
 
 const controlServings = (newServings) => {
   model.updateServings(newServings);
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
 // control bookmarks
 const controlBookmarks = () => {
-  model.addBookmark(model.state.recipe);
+  if (!model.state.recipe.bookmarked) {
+    model.addBookmark(model.state.recipe);
+  } else {
+    model.deleteBookmark(model.state.recipe.id);
+  }
   console.log(model.state.bookmarks);
+  recipeView.update(model.state.recipe);
 };
 
 // Init function to call controllers

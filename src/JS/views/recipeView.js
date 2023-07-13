@@ -41,7 +41,9 @@ class RecipeView extends View {
                   </div>
                 </div>
               </div>
-              <div class="bookmarks-btn">
+              <div class="bookmarks-btn ${
+                this._data.bookmarked ? "marked" : ""
+              }">
                 <button>
                     <i class="fa-regular fa-bookmark"></i>
                 </button>
