@@ -76,12 +76,22 @@ export const getResultsPage = (pageNumber = state.search.page) => {
   return state.search.results.slice(start, end);
 };
 
+const saveToLocalStorage = () => {
+  localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+};
+
+const getFromLocalStorage = () => {
+  const storage = localStorage.getItem("bookmarks");
+  if (storage) state.bookmarks = JSON.parse(storage);
+};
+getFromLocalStorage();
+
 export const addBookmark = (recipe) => {
   state.bookmarks.push(recipe);
-
   if (recipe.id == state.recipe.id) {
     state.recipe.bookmarked = true;
   }
+  saveToLocalStorage();
 };
 
 export const deleteBookmark = (id) => {
@@ -89,4 +99,5 @@ export const deleteBookmark = (id) => {
   state.bookmarks.splice(index, 1);
 
   if (id === state.recipe.id) state.recipe.bookmarked = false;
+  saveToLocalStorage();
 };

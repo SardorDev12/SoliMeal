@@ -4,6 +4,10 @@ class BookmarksView extends View {
   _parentElement = document.querySelector(".bookmarks-content");
   _errorMessage = "No bookmarks yet!";
 
+  addHandlerBookmarks(handler) {
+    window.addEventListener("load", handler);
+  }
+
   _generateMarkup() {
     return this._data
       .map((data) => {

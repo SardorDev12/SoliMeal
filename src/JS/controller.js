@@ -70,6 +70,9 @@ const controlBookmarks = () => {
   recipeView.update(model.state.recipe);
   bookmarksView.render(model.state.bookmarks);
 };
+const controlStorageBookmarks = () => {
+  bookmarksView.render(model.state.bookmarks);
+};
 
 // Init function to call controllers
 const init = () => {
@@ -78,6 +81,7 @@ const init = () => {
   recipeView.addHandlerBookmark(controlBookmarks);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  bookmarksView.addHandlerBookmarks(controlStorageBookmarks);
 };
 init();
 
