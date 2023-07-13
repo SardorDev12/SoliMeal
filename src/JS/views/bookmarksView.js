@@ -2,8 +2,7 @@ import View from "./View.js";
 
 class BookmarksView extends View {
   _parentElement = document.querySelector(".bookmarks-content");
-  _emptyBookmarksMessage =
-    "No recipe found on this url! Please, try another one!";
+  _errorMessage = "No bookmarks yet!";
 
   _generateMarkup() {
     return this._data

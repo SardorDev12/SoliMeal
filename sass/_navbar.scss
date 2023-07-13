@@ -28,22 +28,15 @@
     display: flex;
     height: 100%;
     list-style: none;
-
-    .bookmarks {
-      position: relative;
-
-      .bookmarks-content.show {
-        display: block;
-      }
-    }
+    position: relative;
 
     .bookmarks-content {
       position: absolute;
       min-width: 20rem;
       min-height: 3rem;
       text-align: center;
-      top: 9rem;
-      right: 8.4rem;
+      top: 6rem;
+      right: 0;
       z-index: 1;
       color: #574945;
       background-color: #fbdb89;
@@ -52,6 +45,21 @@
 
       &.show {
         display: block;
+      }
+
+      @media screen and (max-width: 768px) {
+        min-width: 15rem;
+      }
+
+      @media screen and (max-width: 425px) {
+        min-width: 15rem;
+        top: 3.4rem;
+        right: -4rem;
+      }
+      @media screen and (max-width: 320px) {
+        min-width: 15rem;
+        top: 3.4rem;
+        right: 0rem;
       }
 
       p.bookmark-message {

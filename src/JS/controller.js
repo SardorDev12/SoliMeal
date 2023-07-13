@@ -68,6 +68,7 @@ const controlBookmarks = () => {
   }
   console.log(model.state.bookmarks);
   recipeView.update(model.state.recipe);
+  bookmarksView.render(model.state.bookmarks);
 };
 
 // Init function to call controllers
