@@ -131,14 +131,23 @@ window.addEventListener("click", (e) => {
     e.target.classList.contains("search-btn")
   ) {
     document.querySelector(".recipes-result").classList.add("show-results");
-  } else if (
-    document
-      .querySelector(".recipes-result")
-      .classList.contains("show-results") &&
-    !e.target.classList.contains("search-input") &&
-    !e.target.classList.contains("pagination-btn") &&
-    !e.target.classList.contains("recipes-list")
-  ) {
-    document.querySelector(".recipes-result").classList.remove("show-results");
+  } else {
+    document.querySelectorAll(".recipes-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        document
+          .querySelector(".recipes-result")
+          .classList.remove("show-results");
+      });
+    });
   }
+  // } else if (
+  //   document
+  //     .querySelector(".recipes-result")
+  //     .classList.contains("show-results") &&
+  //   !e.target.classList.contains("search-input") &&
+  //   !e.target.classList.contains("pagination-btn") &&
+  //   !e.target.classList.contains("recipes-list")
+  // ) {
+  //   document.querySelector(".recipes-result").classList.remove("show-results");
+  // }
 });
