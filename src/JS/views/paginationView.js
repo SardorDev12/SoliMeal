@@ -5,8 +5,10 @@ class PaginationView extends View {
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener("click", (e) => {
-      const gotoPage = +e.target.dataset.goto;
-      handler(gotoPage);
+      if (e.target.classList.contains("pagination-btn")) {
+        const gotoPage = +e.target.dataset.goto;
+        handler(gotoPage);
+      }
     });
   }
 
