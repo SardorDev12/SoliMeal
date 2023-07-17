@@ -52,7 +52,7 @@
       }
 
       @media screen and (max-width: 425px) {
-        min-width: 15rem;
+        min-width: 18rem;
         top: 3.4rem;
         right: -4rem;
       }
@@ -73,6 +73,7 @@
           @include flex;
           justify-content: flex-start;
           padding: 0.5rem;
+          text-align: start;
           gap: 1rem;
           transition: all 0.2s;
           color: #574945;
