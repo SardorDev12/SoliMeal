@@ -38,7 +38,7 @@
 }
 
 .add-form {
-  width: 75%;
+  width: 85%;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -51,8 +51,19 @@
   z-index: 2;
 
   @media screen and (max-width: 768px) {
-    width: 98%;
-    z-index: 2;
+    padding: 2rem 0;
+  }
+
+  @media screen and (max-width: 920px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 810px) {
+    width: 95%;
+  }
+
+  @media screen and (max-width: 720px) {
+    top: 30rem;
   }
 
   @media screen and (max-width: 425px) {
@@ -63,17 +74,38 @@
   .input-area {
     @include flex;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 720px) {
       @include flex-column;
     }
   }
 
-  .data {
-    input {
-      outline: none;
+  .recipe-ingredients {
+    .data {
+      justify-content: flex-end;
     }
   }
 
+  .data {
+    .ingredient {
+      @include flex;
+      justify-content: flex-end;
+    }
+    .ingredient-desc {
+      width: 50%;
+      @include flex;
+      justify-content: flex-end;
+
+      div {
+        text-align: end;
+        @include flex;
+        flex-direction: column;
+        input {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
   div .form-title {
     text-align: center;
   }
@@ -92,6 +124,7 @@
     text-align: end;
     font-size: 2rem;
     color: red;
+    margin: 0 0.5rem;
 
     &:hover {
       color: rgb(192, 26, 26);

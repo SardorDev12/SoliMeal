@@ -4,6 +4,7 @@ import searchView from "./views/searchView.js";
 import searchResultsView from "./views/searchResultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
+import addRecipeView from "./views/addRecipeView.js";
 
 // Load search results
 const controlSearchResults = async () => {
@@ -22,6 +23,7 @@ const controlSearchResults = async () => {
     // Rendering the recipes in results section
     searchResultsView.render(model.getResultsPage());
     paginationView.render(model.state.search);
+    console.log(model.state.recipe);
   } catch (err) {
     console.log(err);
     searchResultsView.renderError();
@@ -74,6 +76,10 @@ const controlStorageBookmarks = () => {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlUploads = (newRecipe) => {
+  model.uploadRecipe(newRecipe);
+};
+
 // Init function to call controllers
 const init = () => {
   recipeView.addHandlerRender(controlRecipes);
@@ -82,6 +88,7 @@ const init = () => {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerBookmarks(controlStorageBookmarks);
+  addRecipeView.addHandlerUpload(controlUploads);
 };
 init();
 
@@ -112,17 +119,17 @@ document.querySelector(".bookmarks").addEventListener("click", () => {
 });
 
 // *********** Modal **********
-const addRecipeForm = document.querySelector(".add-recipe-form");
-const bgEffect = document.querySelector(".bg-effect");
-window.addEventListener("click", (e) => {
-  if (e.target.classList.contains("add-recipe-btn")) {
-    addRecipeForm.classList.add("show");
-    bgEffect.classList.add("show");
-  } else if (e.target.classList.contains("close-btn")) {
-    addRecipeForm.classList.remove("show");
-    bgEffect.classList.remove("show");
-  }
-});
+// const addRecipeForm = document.querySelector(".add-recipe-form");
+// const bgEffect = document.querySelector(".bg-effect");
+// window.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("add-recipe-btn")) {
+//     addRecipeForm.classList.add("show");
+//     bgEffect.classList.add("show");
+//   } else if (e.target.classList.contains("close-btn")) {
+//     addRecipeForm.classList.remove("show");
+//     bgEffect.classList.remove("show");
+//   }
+// });
 
 // ************ Show input results on mobile **************
 window.addEventListener("click", (e) => {
@@ -140,14 +147,4 @@ window.addEventListener("click", (e) => {
       });
     });
   }
-  // } else if (
-  //   document
-  //     .querySelector(".recipes-result")
-  //     .classList.contains("show-results") &&
-  //   !e.target.classList.contains("search-input") &&
-  //   !e.target.classList.contains("pagination-btn") &&
-  //   !e.target.classList.contains("recipes-list")
-  // ) {
-  //   document.querySelector(".recipes-result").classList.remove("show-results");
-  // }
 });

@@ -101,3 +101,38 @@ export const deleteBookmark = (id) => {
   if (id === state.recipe.id) state.recipe.bookmarked = false;
   saveToLocalStorage();
 };
+
+export const uploadRecipe = async (newRecipe) => {
+  const ingredients = [];
+  const ingredientKeys = Object.keys(newRecipe).filter((key) =>
+    key.startsWith("ing-desc-")
+  );
+
+  for (let i = 0; i < ingredientKeys.length; i++) {
+    const ingredientNumber = ingredientKeys[i].split("-")[2];
+    const quantityKey = `ing-quantity-${ingredientNumber}`;
+    const unitKey = `ing-unit-${ingredientNumber}`;
+
+    if (newRecipe[`ing-desc-${ingredientNumber}`]) {
+      const ingredient = {
+        quantity: newRecipe[quantityKey] || "",
+        unit: newRecipe[unitKey] || "",
+        productName: newRecipe[`ing-desc-${ingredientNumber}`],
+      };
+      ingredients.push(ingredient);
+    }
+  }
+
+  const result = {
+    title: newRecipe.title,
+    cooking_time: newRecipe.time,
+    id: "",
+    image: newRecipe.img,
+    ingredients,
+    publisher: newRecipe.publisher,
+    servings: newRecipe.servings,
+    source: newRecipe.url,
+    bookmarked: false,
+  };
+  return result;
+};

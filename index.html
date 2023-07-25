@@ -17,7 +17,6 @@
   </head>
   <body>
     <!-- ********** BACKGORUND SHADE WHEN MODAL APPEARS ************-->
-    <div class="bg-effect"></div>
 
     <!-- ********** MAIN DIV ************** -->
     <div class="section-center" id="home">
@@ -56,6 +55,7 @@
       </nav>
 
       <!-- ********** ADD NEW RECIPE FORM ************** -->
+      <div class="bg-effect"></div>
       <div class="add-recipe-form">
         <form class="add-form">
           <div class="close-btn">
@@ -69,32 +69,64 @@
               <div class="data">
                 <div class="data-title">
                   <label for="data-title">Title</label>
-                  <input autocomplete="off" type="text" id="data-title" />
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    id="data-title"
+                    autocomplete="off"
+                    type="text"
+                    name="title"
+                  />
                 </div>
                 <div class="data-url">
                   <label for="data-url">URL</label>
-                  <input autocomplete="off" type="text" id="data-url" />
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    id="data-url"
+                    autocomplete="off"
+                    type="text"
+                    name="url"
+                  />
                 </div>
                 <div class="data-img">
                   <label for="data-img">Image</label>
-                  <input autocomplete="off" type="text" id="data-img" />
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    id="data-img"
+                    autocomplete="off"
+                    type="text"
+                    name="img"
+                  />
                 </div>
                 <div class="data-publisher">
                   <label for="data-publisher">Publisher</label>
                   <input
                     autocomplete="off"
                     type="text"
-                    name=""
-                    id="data-publisher"
+                    id="data-title"
+                    name="publisher"
                   />
                 </div>
+
                 <div class="prep-time">
                   <label for="prep-time">Prep time</label>
-                  <input autocomplete="off" type="text" id="prep-time" />
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    id="prep-time"
+                    name="time"
+                  />
                 </div>
                 <div class="servings">
                   <label for="servings">Servings</label>
-                  <input autocomplete="off" type="text" id="servings" />
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    id="servings"
+                    name="servings"
+                  />
                 </div>
               </div>
             </div>
@@ -105,27 +137,195 @@
               <div class="data">
                 <div class="ingredient">
                   <label for="ingredient-1">Ingredient 1</label>
-                  <input autocomplete="off" type="text" id="ingredient-1" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-1">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-quantity-1"
+                        name="ing-quantity-1"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-1"
+                        name="ing-unit-1"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Product</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-1"
+                        name="ing-desc-1"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="ingredient">
                   <label for="ingredient-2">Ingredient 2</label>
-                  <input autocomplete="off" type="text" id="ingredient-2" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-2">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-quantity-2"
+                        name="ing-quantity-2"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-2"
+                        name="ing-unit-2"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Description</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-2"
+                        name="ing-desc-2"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="ingredient">
                   <label for="ingredient-3">Ingredient 3</label>
-                  <input autocomplete="off" type="text" id="ingredient-3" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-3">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-q-3uantity-3"
+                        name="ing-quantity-3"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-3"
+                        name="ing-unit-3"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Description</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-3"
+                        name="ing-desc-3"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="ingredient">
                   <label for="ingredient-4">Ingredient 4</label>
-                  <input autocomplete="off" type="text" id="ingredient-4" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-4">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-quantity-4"
+                        name="ing-quantity-4"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-4"
+                        name="ing-unit-4"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Description</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-4"
+                        name="ing-desc-4"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="ingredient">
                   <label for="ingredient-5">Ingredient 5</label>
-                  <input autocomplete="off" type="text" id="ingredient-5" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-5">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-quantity-5"
+                        name="ing-quantity-5"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-5"
+                        name="ing-unit-5"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Description</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-5"
+                        name="ing-desc-5"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div class="ingredient">
                   <label for="ingredient-6">Ingredient 6</label>
-                  <input autocomplete="off" type="text" id="ingredient-6" />
+                  <div class="ingredient-desc">
+                    <div>
+                      <label for="ing-quantity-6">Quantity</label>
+                      <input
+                        autocomplete="off"
+                        type="number"
+                        id="ing-quantity-6"
+                        name="ing-quantity-6"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-unit">Unit</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-unit-6"
+                        name="ing-unit-6"
+                      />
+                    </div>
+                    <div>
+                      <label for="ing-desc">Description</label>
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        id="ing-desc-6"
+                        name="ing-desc-6"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
