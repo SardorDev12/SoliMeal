@@ -18,7 +18,7 @@ class SearchResultsView extends View {
       .map((data) => {
         return `
               <a href="#${data.id}" class="recipes-item">
-              <li>
+              <li class="search-item">
                 <div class="item-img">
                   <img src="${data.image}" />
                 </div>

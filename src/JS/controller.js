@@ -22,7 +22,6 @@ const controlSearchResults = async () => {
     // Rendering the recipes in results section
     searchResultsView.render(model.getResultsPage());
     paginationView.render(model.state.search);
-    console.log(model.state.recipe);
   } catch (err) {
     console.log(err);
     searchResultsView.renderError();
@@ -116,21 +115,9 @@ document.querySelector(".bookmarks").addEventListener("click", () => {
   document.querySelector(".bookmarks-content").classList.toggle("show");
 });
 
-// *********** Modal **********
-// const addRecipeForm = document.querySelector(".add-recipe-form");
-// const bgEffect = document.querySelector(".bg-effect");
-// window.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("add-recipe-btn")) {
-//     addRecipeForm.classList.add("show");
-//     bgEffect.classList.add("show");
-//   } else if (e.target.classList.contains("close-btn")) {
-//     addRecipeForm.classList.remove("show");
-//     bgEffect.classList.remove("show");
-//   }
-// });
-
 // ************ Show input results on mobile **************
 window.addEventListener("click", (e) => {
+  console.log(e.target);
   if (
     e.target.classList.contains("search-input") ||
     e.target.classList.contains("search-btn")
@@ -145,4 +132,8 @@ window.addEventListener("click", (e) => {
       });
     });
   }
+});
+
+window.addEventListener("hashchange", () => {
+  document.querySelector(".recipes-result").classList.remove("show-results");
 });
