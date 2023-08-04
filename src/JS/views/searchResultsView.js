@@ -5,6 +5,14 @@ class SearchResultsView extends View {
   _errorMessage = "No recipes found on this query! Please, try another one!";
   _successMessage = "Recipes found successfully!";
 
+  addHandlerShowResults(handler) {
+    this._parentElement.addEventListener("click", (e) => {
+      const resultsItem = e.target.closest(".recipes-item");
+      console.log(resultsItem);
+    });
+    handler();
+  }
+
   _generateMarkup() {
     return this._data
       .map((data) => {

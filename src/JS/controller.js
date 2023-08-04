@@ -4,7 +4,6 @@ import searchView from "./views/searchView.js";
 import searchResultsView from "./views/searchResultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
-import addRecipeView from "./views/addRecipeView.js";
 
 // Load search results
 const controlSearchResults = async () => {
@@ -88,7 +87,6 @@ const init = () => {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerBookmarks(controlStorageBookmarks);
-  addRecipeView.addHandlerUpload(controlUploads);
 };
 init();
 
