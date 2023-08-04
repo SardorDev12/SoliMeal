@@ -6,7 +6,7 @@
 
   @media screen and (max-width: 425px) {
     @include flex-column;
-    height: 10rem;
+    height: 11rem;
     padding: 0;
   }
 
@@ -54,12 +54,16 @@
       @media screen and (max-width: 425px) {
         min-width: 18rem;
         top: 3.4rem;
-        right: -4rem;
+        right: -8.6rem;
+      }
+
+      @media screen and (max-width: 375px) {
+        right: -7.5rem;
       }
       @media screen and (max-width: 320px) {
         min-width: 15rem;
         top: 3.4rem;
-        right: 0rem;
+        right: -5.5rem;
       }
 
       p.bookmark-message {

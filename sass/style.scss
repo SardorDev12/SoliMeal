@@ -4,7 +4,6 @@
 @import "form";
 @import "recipes-list";
 @import "recipes-window";
-@import "modal";
 
 * {
   // padding was given to avoid margin collapse
@@ -17,6 +16,8 @@ body {
   background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 img {
